@@ -1,0 +1,61 @@
+<div class="container">
+  <h1 style="text-align: center;">CALCULATOR</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div id="screen" class="col s12"></div>
+  </div>
+  <div class="row">
+    <% @buttons[0..3].each do |b| %>
+         <button id="<%= b %>-btn" class="col s3" style="text-align:center;" onClick="btn('<%= b %>');"><%= b %></button>
+    <% end %>  
+  </div>
+  <div class="row">
+    <% @buttons[4..7].each do |b| %>
+         <button id="<%= b %>-btn" class="col s3" style="text-align:center;" onClick="btn('<%= b %>');"><%= b %></button>
+    <% end %>  
+  </div>
+  <div class="row">
+    <% @buttons[8..11].each do |b| %>
+         <button id="<%= b %>-btn" class="col s3" style="text-align:center;" onClick="btn('<%= b %>');"><%= b %></button>
+    <% end %>  
+  </div>
+  <div class="row">
+    <% @buttons[12..15].each do |b| %>
+      <% if b != '=' %>
+        <button id="<%= b %>-btn" class="col s3" style="text-align:center;" onClick="btn('<%= b %>');"><%= b %></button>
+      <% else %>
+        <button id="<%= b %>-btn" class="col s3" style="text-align:center;" onClick="calculate();"><%= b %></button>
+      <% end %>
+    <% end %>  
+  </div>
+  <div class="row">
+    <button id="more-btn" class="col s12" onClick="showMoreOrLess();">
+      SHOW MORE FUNCTIONS
+    </button>
+    <div id="more-btns" style="display:none;">  
+      <button class="col s3">
+        sin()
+      </button>
+      <button class="col s3">
+        cos()
+      </button>
+      <button class="col s3">
+        tan()
+      </button>
+      <button class="col s3">
+        cotan()
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <button id="less-btn" class="col s12" onClick="showMoreOrLess();" style="display:none;">SHOW BASIC CALCULATOR</button>
+  </div>
+  <div class="row">
+    <button class="col s12" onClick="setToZero();">
+      CLEAR
+    </button>
+  </div>
+</div>
+
